@@ -1,24 +1,6 @@
 version: '3.8'
 
 services:
-  # Reverse Proxy with SSL
-  nginx:
-    image: nginx:alpine
-    container_name: geosaas_nginx
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./ssl:/etc/nginx/ssl:ro
-      - frontend_build:/usr/share/nginx/html:ro
-    depends_on:
-      - api
-      - frontend
-    networks:
-      - geo-saas
-    restart: unless-stopped
-
   # Frontend React App
   frontend:
     build:
@@ -145,7 +127,6 @@ volumes:
   postgres_data:
   redis_data:
   report_storage:
-  frontend_build:
 
 networks:
   geo-saas:
