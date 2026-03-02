@@ -1,24 +1,18 @@
 FROM node:20-alpine AS base
 WORKDIR /app
 
-# Dependencies
-FROM base AS deps
-RUN apk add --no-cache libc-dev
+# install dependencies
 COPY package.json package-lock.json* ./
-RUN npm install --omit=dev
+RUN npm install --omit=dev || npm install
 
-# Builder
-FROM base AS builder
-ENV NODE_ENV=production
-COPY --from=deps /app/node_modules ./node_modules
+# build
 COPY . .
-RUN npm run build
+RUN npm run build || (npm install && npm run build)
 
-# Production
-FROM base AS production
-ENV NODE_ENV=production
+# serve static
+FROM node:20-alpine
+WORKDIR /app
 RUN npm install -g serve
-COPY --from=builder /app/dist /usr/share/nginx/html
-
+COPY --from=base /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["serve", "-s", "/usr/share/nginx/html", "-l", "80"]
