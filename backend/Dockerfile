@@ -1,11 +1,9 @@
 FROM node:20-alpine AS builder
 WORKDIR /app
 
-# install deps
 COPY package*.json ./
 RUN npm install --omit=dev || npm install
 
-# build
 COPY . .
 RUN npm run build || (npm install && npm run build)
 
