@@ -5,7 +5,7 @@ WORKDIR /app
 FROM base AS deps
 RUN apk add --no-cache libc-dev
 COPY package.json package-lock.json* ./
-RUN npm ci
+RUN npm install --omit=dev
 
 # Builder
 FROM base AS builder
