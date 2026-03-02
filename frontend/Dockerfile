@@ -10,7 +10,7 @@ COPY . .
 RUN npm run build || (npm install && npm run build)
 
 # serve static
-FROM node:20-alpine
+FROM node:20-alpine AS production
 WORKDIR /app
 RUN npm install -g serve
 COPY --from=base /app/dist /usr/share/nginx/html
