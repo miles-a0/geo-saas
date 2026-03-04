@@ -34,7 +34,7 @@ export default function Login() {
           <div className="text-center">
             <Link to="/" className="inline-flex items-center gap-2">
               <Globe className="h-10 w-10 text-primary-600" />
-              <span className="text-2xl font-bold text-surface-900">Geo-SaaS</span>
+              <span className="text-2xl font-bold text-surface-900">G-SEO</span>
             </Link>
             <h1 className="mt-6 text-3xl font-bold text-surface-900">Welcome back</h1>
             <p className="mt-2 text-surface-500">Sign in to your account to continue</p>

@@ -261,6 +261,7 @@ async function handleSubscriptionChange(subscription: Stripe.Subscription): Prom
 
   if (user) {
     const isActive = subscription.status === 'active';
+    const wasPreviouslyActive = user.subscription_status === 'active';
     
     await db.query(
       `UPDATE users 
@@ -278,6 +279,20 @@ async function handleSubscriptionChange(subscription: Stripe.Subscription): Prom
         user.id
       ]
     );
+
+    // Send subscription confirmation email on first activation
+    if (isActive && !wasPreviouslyActive) {
+      await sendEmail({
+        to: user.email,
+        template: 'subscriptionConfirmation',
+        data: {
+          firstName: user.first_name || 'there',
+          reportsPerYear: '12',
+          renewalDate: new Date(subscription.current_period_end * 1000).toLocaleDateString(),
+        },
+      });
+      logger.info(`Subscription confirmation email sent to user ${user.id}`);
+    }
 
     logger.info(`Subscription updated for user ${user.id}: ${subscription.status}`);
   }

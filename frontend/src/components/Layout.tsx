@@ -44,7 +44,7 @@ export default function Layout() {
             <div className="flex h-16 items-center justify-between px-6 border-b border-surface-200">
               <div className="flex items-center gap-2">
                 <Globe className="h-8 w-8 text-primary-600" />
-                <span className="text-xl font-bold text-surface-900">Geo-SaaS</span>
+                <span className="text-xl font-bold text-surface-900">G-SEO</span>
               </div>
               <button onClick={() => setSidebarOpen(false)} className="p-2 rounded-lg hover:bg-surface-100">
                 <X className="h-5 w-5" />
@@ -98,10 +98,10 @@ export default function Layout() {
       {/* Desktop sidebar */}
       <div className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-50 lg:block lg:w-64 lg:bg-white lg:border-r lg:border-surface-200">
         <div className="flex h-16 items-center justify-between px-6 border-b border-surface-200">
-          <div className="flex items-center gap-2">
-            <Globe className="h-8 w-8 text-primary-600" />
-            <span className="text-xl font-bold text-surface-900">Geo-SaaS</span>
-          </div>
+              <div className="flex items-center gap-2">
+                <Globe className="h-8 w-8 text-primary-600" />
+                <span className="text-xl font-bold text-surface-900">G-SEO</span>
+              </div>
         </div>
         <nav className="p-4 space-y-1">
           {navigation.map((item) => (

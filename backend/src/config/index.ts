@@ -43,7 +43,7 @@ export const config = {
     user: process.env.EMAIL_USER || '',
     password: process.env.EMAIL_PASSWORD || '',
     from: process.env.EMAIL_FROM || 'noreply@localhost',
-    fromName: process.env.EMAIL_FROM_NAME || 'Geo-SaaS',
+    fromName: process.env.EMAIL_FROM_NAME || 'G-SEO',
   },
   
   // Frontend

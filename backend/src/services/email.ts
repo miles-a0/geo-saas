@@ -30,14 +30,14 @@ function renderTemplate(template: string, data: EmailTemplateData): string {
 // Email templates
 const templates = {
   welcome: {
-    subject: 'Welcome to Geo-SaaS!',
+    subject: 'Welcome to G-SEO!',
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #4F46E5; margin: 0;">🌍 Geo-SaaS</h1>
+          <h1 style="color: #4F46E5; margin: 0;">🌍 G-SEO</h1>
         </div>
-        <h2>Welcome to Geo-SaaS, {{firstName}}!</h2>
-        <p>Thank you for joining Geo-SaaS. We're excited to help you optimize your website for AI-powered search engines.</p>
+        <h2>Welcome to G-SEO, {{firstName}}!</h2>
+        <p>Thank you for joining G-SEO. We're excited to help you optimize your website for AI-powered search engines.</p>
         
         <div style="background: #F3F4F6; border-radius: 12px; padding: 24px; margin: 24px 0;">
           <h3 style="margin-top: 0;">🚀 Get Started</h3>
@@ -52,7 +52,7 @@ const templates = {
         
         <p style="color: #6B7280; font-size: 14px; margin-top: 40px;">
           Best regards,<br/>
-          The Geo-SaaS Team
+          The G-SEO Team
         </p>
       </div>
     `,
@@ -63,7 +63,7 @@ const templates = {
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #4F46E5; margin: 0;">🌍 Geo-SaaS</h1>
+          <h1 style="color: #4F46E5; margin: 0;">🌍 G-SEO</h1>
         </div>
         <h2>Your GEO Report is Ready!</h2>
         <p>Hi {{firstName}},</p>
@@ -88,18 +88,18 @@ const templates = {
         
         <p style="color: #6B7280; font-size: 14px; margin-top: 40px;">
           Best regards,<br/>
-          The Geo-SaaS Team
+          The G-SEO Team
         </p>
       </div>
     `,
   },
 
   paymentReceipt: {
-    subject: 'Payment Receipt - Geo-SaaS',
+    subject: 'Payment Receipt - G-SEO',
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #4F46E5; margin: 0;">🌍 Geo-SaaS</h1>
+          <h1 style="color: #4F46E5; margin: 0;">🌍 G-SEO</h1>
         </div>
         <h2>Payment Receipt</h2>
         <p>Hi {{firstName}},</p>
@@ -132,18 +132,18 @@ const templates = {
         
         <p style="color: #6B7280; font-size: 14px; margin-top: 40px;">
           Best regards,<br/>
-          The Geo-SaaS Team
+          The G-SEO Team
         </p>
       </div>
     `,
   },
 
   subscriptionConfirmation: {
-    subject: 'Subscription Confirmed - Geo-SaaS',
+    subject: 'Subscription Confirmed - G-SEO',
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #4F46E5; margin: 0;">🌍 Geo-SaaS</h1>
+          <h1 style="color: #4F46E5; margin: 0;">🌍 G-SEO</h1>
         </div>
         <h2>Subscription Confirmed!</h2>
         <p>Hi {{firstName}},</p>
@@ -159,18 +159,18 @@ const templates = {
         
         <p style="color: #6B7280; font-size: 14px; margin-top: 40px;">
           Best regards,<br/>
-          The Geo-SaaS Team
+          The G-SEO Team
         </p>
       </div>
     `,
   },
 
   lowCredits: {
-    subject: 'Your credits are running low - Geo-SaaS',
+    subject: 'Your credits are running low - G-SEO',
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
         <div style="text-align: center; margin-bottom: 30px;">
-          <h1 style="color: #4F46E5; margin: 0;">🌍 Geo-SaaS</h1>
+          <h1 style="color: #4F46E5; margin: 0;">🌍 G-SEO</h1>
         </div>
         <h2>Running Low on Credits</h2>
         <p>Hi {{firstName}},</p>
@@ -188,7 +188,7 @@ const templates = {
         
         <p style="color: #6B7280; font-size: 14px; margin-top: 40px;">
           Best regards,<br/>
-          The Geo-SaaS Team
+          The G-SEO Team
         </p>
       </div>
     `,

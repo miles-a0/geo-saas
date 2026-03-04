@@ -353,26 +353,36 @@ Provide exactly 5 numbered recommendations, each as a short sentence."""
     
     def _get_default_template(self) -> str:
         """Default HTML template for reports."""
-        return '''<!DOCTYPE html>
+        logo_path = os.path.join(os.path.dirname(__file__), '..', 'templates', 'G-SEO_Logo.jpg')
+        logo_data = None
+        if os.path.exists(logo_path):
+            import base64
+            with open(logo_path, 'rb') as f:
+                logo_data = base64.b64encode(f.read()).decode('utf-8')
+        
+        logo_img = f'<img src="data:image/jpeg;base64,{logo_data}" alt="G-SEO Logo" style="max-height: 80px; margin-bottom: 20px;" />' if logo_data else '<h1 style="color: #4F46E5;">G-SEO</h1>'
+        
+        return f'''<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Geo SEO Report - {{ website_url }}</title>
+    <title>G-SEO Report - {{ website_url }}</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
-        .header { text-align: center; margin-bottom: 40px; }
-        .score { font-size: 72px; font-weight: bold; color: #2563eb; }
-        .section { margin: 30px 0; }
-        h2 { color: #1e40af; border-bottom: 2px solid #2563eb; padding-bottom: 10px; }
-        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
-        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background: #f3f4f6; }
-        .recommendation { background: #fef3c7; padding: 15px; margin: 10px 0; border-left: 4px solid #f59e0b; }
+        body {{ font-family: Arial, sans-serif; margin: 40px; color: #333; }}
+        .header {{ text-align: center; margin-bottom: 40px; }}
+        .score {{ font-size: 72px; font-weight: bold; color: #2563eb; }}
+        .section {{ margin: 30px 0; }}
+        h2 {{ color: #1e40af; border-bottom: 2px solid #2563eb; padding-bottom: 10px; }}
+        table {{ width: 100%; border-collapse: collapse; margin: 20px 0; }}
+        th, td {{ padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }}
+        th {{ background: #f3f4f6; }}
+        .recommendation {{ background: #fef3c7; padding: 15px; margin: 10px 0; border-left: 4px solid #f59e0b; }}
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Geo SEO Analysis Report</h1>
+        {logo_img}
+        <h1>G-SEO Analysis Report</h1>
         <p>{{ website_url }}</p>
         <div class="score">{{ score }}/100</div>
         <p>Generated: {{ generated_at }}</p>
